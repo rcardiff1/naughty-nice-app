@@ -18,4 +18,5 @@ angular.module('naughtyOrNiceChecker', [])
 		}
 		$scope.checkerName = user;
 	};
+	
 }]);
