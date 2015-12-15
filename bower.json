@@ -1,0 +1,11 @@
+{
+  "name": "naughty-nice-app",
+  "description": "A simple single page application checking if you are naughty or nice",
+  "main": "index.js",
+  "authors": [
+    "robert cardiff"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rcardiff1/naughty-nice-app",
+  "moduleType": []
+}

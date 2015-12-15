@@ -1,6 +1,5 @@
 angular.module('naughtyOrNiceChecker', [])
 
-
 .controller('naughtyOrNiceCtrl', ['$scope', function($scope) {
 	$scope.isNaughtyOrNice = '';
 	$scope.checkerName = '';
@@ -12,14 +11,11 @@ angular.module('naughtyOrNiceChecker', [])
 
 		if(randomNum > 5) {
 			$scope.isNaughtyOrNice = 'Looks like ' + user + ' has been very nice this year!';
-			$scope.imageUrl = "./Christmas-Gift.gif";
+			$scope.imageUrl = "./christmas-Gift.gif";
 		} else {
 			$scope.isNaughtyOrNice = 'Looks like ' + user + ' has been very naughty this year!';
 			$scope.imageUrl = "./santa-flipping-the-bird.gif";
 		}
 		$scope.checkerName = user;
 	};
-
-
-
 }]);
