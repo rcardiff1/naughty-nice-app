@@ -2,20 +2,48 @@
 <html>
 <head>
 	<title>
-		
+		Naughty or Nice
 	</title>
+
+	<link rel="stylesheet" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-	<script src="./public/client/naughtOrNice.js"></script>
+
+	<script src="./checker.js"></script>
 
 </head>
 
 	<body>
-			<h1>Hello There world</h1>
-	    <div ng-app="naughtyOrNiceChecker" ng-controller="naughtyOrNiceCtrl">
-	    		
-	        <h1 ng-click="checkNaughtyOrNice()">  </h1>
-	    </div>
-	</body>
-</html> 
+		<div id="title-banner">
+			<h1>Merry Christmas</h1>
+		</div>
 
-<!-- {{ display }} -->
+    <div ng-app="naughtyOrNiceChecker" ng-controller="naughtyOrNiceCtrl">	
+			<div class="row">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-3">
+					<img id="christmasTreeImage" src="http://namiwash.org/wp-content/uploads/2015/10/christmas-tree-clip-art-nwopankc.png">
+				</div>
+				<div class="col-xs-5 container">
+					<h2>Naughty or Nice Checker:</h2>
+					<div class="input-container">
+						<form name='checkerForm' ng-submit="checkNaughtyOrNice(checkerName)" novalidate>
+				      <input class="nameInput" name='input' type="text" placeholder="Enter your name here" ng-model="checkerName" required/>
+				      <button class="nameButton" type="submit" value="getName">
+				        Ask Santa...
+				      </button>
+			    	</form>
+		    	</div>	
+					<h3> {{ isNaughtyOrNice }} </h3>
+					<img id="naughtyOrNiceImage" ng-src=" {{ imageUrl }} ">
+				</div>
+				<div class="col-xs-2"></div>
+			</div>
+
+		</div>			
+	</body>
+	
+
+
+</html> 

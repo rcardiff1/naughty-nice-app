@@ -1,0 +1,42 @@
+h2 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+#title-banner {
+	text-align: center;
+	height: 100px
+}
+
+.container {
+  border: 2px solid;
+  border-radius: 25px;
+  background-color: #F0F0F0;
+  height: 400px;
+  margin: 5px;
+}
+
+#christmasTreeImage {
+	height: 250px;
+	margin: 20;
+}
+
+.nameInput {
+  border-radius: 3px;
+  margin: 5px;
+  width: 200px;
+  margin-left: 15%;
+}
+
+.nameButton {
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: red;
+}
+
+#naughtyOrNiceImage {
+	margin-left: 40%;
+}
