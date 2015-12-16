@@ -18,6 +18,8 @@
   "homepage": "https://github.com/rcardiff1/naughty-nice-app#readme",
   "dependencies": {
     "angular": "^1.4.8",
-    "express": "^4.13.3"
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.1"
   }
 }

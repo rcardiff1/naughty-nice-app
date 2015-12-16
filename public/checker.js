@@ -1,22 +1,39 @@
 angular.module('naughtyOrNiceChecker', [])
 
-.controller('naughtyOrNiceCtrl', ['$scope', function($scope) {
+.controller('naughtyOrNiceCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.isNaughtyOrNice = '';
-	$scope.checkerName = '';
+	$scope.user = {};
 	$scope.imageUrl = '';
 
-	$scope.checkNaughtyOrNice = function(user) {
-		
-		var randomNum = Math.floor(Math.random() * (10 - 1)) + 1;
-
-		if(randomNum > 5) {
-			$scope.isNaughtyOrNice = 'Looks like ' + user + ' has been very nice this year!';
+	$scope.checkNaughtyOrNice = function(name) {
+		var randomNum = Math.floor(Math.random() * (3 - 1)) + 1;
+		if(randomNum <= 1) {
+			$scope.user.name = name;
+			$scope.user.naughty = false;
+			$scope.user.nice = (randomNum === 1) || false;
+			$scope.isNaughtyOrNice = 'Looks like ' + name + ' has been very nice this year!';
 			$scope.imageUrl = "./christmas-Gift.gif";
 		} else {
-			$scope.isNaughtyOrNice = 'Looks like ' + user + ' has been very naughty this year!';
+			$scope.user.name = name;
+			$scope.user.naughty = (randomNum === 2) || false;
+			$scope.user.nice = false;
+			$scope.isNaughtyOrNice = 'Looks like ' + name + ' has been very naughty this year!';
 			$scope.imageUrl = "./santa-flipping-the-bird.gif";
-		}
-		$scope.checkerName = user;
+		};
+
+		$http({
+		  method: 'POST',
+		  url: '/update',
+		  data: $scope.user,
+		}).then(function successCallback(response) {
+		    // this callback will be called asynchronously
+		    // when the response is available
+		  }, function errorCallback(response) {
+		    // called asynchronously if an error occurs
+		    // or server returns response with an error status.
+		  });
+
 	};
-	
 }]);
+
+
